@@ -27,12 +27,6 @@ def route53domains():
             i = i + 1
             domain_name = domain["DomainName"]
             print(f"testing {domain_name} for vulnerability")
-            # Fix : 
-            # In AWS Route 53, you cannot define NS (Name Server) records for a domain directly without creating a hosted zone. 
-            # The hosted zone is a fundamental concept in Route 53 for managing DNS settings, 
-            # and it's necessary for setting up any DNS records, including NS records. 
-            # If the domain is registed in AWS, and no hostedzone for it, 
-            # there is no point to check vulnerable_ns 
 
             result = vulnerable_ns(domain_name)
 

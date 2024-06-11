@@ -48,10 +48,9 @@ def db_get_unfixed_vulnerability_found_date_time(domain):
             vulnerability["FixedDateTime"]
 
         except KeyError:
-            return vulnerability["FoundDateTime"]
-
-    return {}
-
+            return {}
+    
+    return vulnerability["FoundDateTime"]
 
 def db_vulnerability_found(domain, account, vulnerability_type, resource_type, cloud="AWS"):
     # creates a new item in DynamoDB when Domain Protect finds a vulnerability
